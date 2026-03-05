@@ -15,19 +15,10 @@ function App() {
     })
   }
 
-  let contactsDisplay
-  if (contactsData.length <= 0) {
-    contactsDisplay = <span>No contacts yet. Add one below!</span>;
-  } else {
-    contactsDisplay = <ContactList items={contacts} />;
-  }
-
   return (
     <>
       <SearchBar />
-      <div>
-        {contactsDisplay}
-      </div>
+      <ContactList items={contacts} />
       <ContactForm onAddContact={addContactHandler}/>
     </>
   );
