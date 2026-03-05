@@ -2,11 +2,12 @@
 
 import ContactItem from './ContactItem.jsx';
 
-function ContactList() {
+const ContactList = (props)=>{
     return (
         <div>
-            <h2>Contact list test</h2>
-            <ContactItem />
+            {props.items.map(item => {
+                return <ContactItem key={item.id} name={item.name} email={item.email} phone={item.phone} birthdate={item.birthdate} />
+            })}
         </div>
     );
 
