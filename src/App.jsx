@@ -4,18 +4,10 @@ import ContactForm from './components/ContactForm.jsx';
 import ContactList from './components/ContactList.jsx';
 import SearchBar from './components/SearchBar.jsx';
 
-const contactsData = [
-  {
-    id: Date.now().toString(),
-    name: 'Lana Burger',
-    email: 'lana.burger@icloud.com',
-    phone: '734-272-7809',
-    birthdate: '9/22/2005'
-  }
-];
+const contactsData = [];
 
 function App() {
-  const [contacts,setContacts] = useState(contactsData);
+  const [contacts, setContacts] = useState(contactsData);
 
   const addContactHandler = (contactData)=>{
     setContacts(prevContact=>{

@@ -1,5 +1,6 @@
-import { useState } from 'react';
 // controlled inputs for Name/Email/Phone; submits to add
+
+import { useState } from 'react';
 
 const ContactForm = function(props) {
     const [enteredName, setEnteredName] = useState('');
