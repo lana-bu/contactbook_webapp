@@ -10,13 +10,13 @@ function App() {
   const [contacts, setContacts] = useState(contactsData);
   const [searchTerm, setSearchTerm] = useState('');
 
-  const addContactHandler = (contactData)=>{ // update contact list when contact is added
-    setContacts(prevContact=>{
+  const addContactHandler = (contactData) => { // update contact list when contact is added
+    setContacts(prevContact => {
       return [contactData, ...prevContact];
     })
   }
 
-  const searchChangeHandler = (value)=>{
+  const searchChangeHandler = (value) => {
     setSearchTerm(value);
   }
 
@@ -25,10 +25,14 @@ function App() {
     return contact.name.toLowerCase().includes(term) || contact.email.toLowerCase().includes(term);
   });
 
+  const deleteContactHandler = (id) => {
+    setContacts(contacts.filter(contact => contact.id !== id));
+  };
+
   return (
     <>
       <SearchBar onSearchChange={searchChangeHandler} />
-      <ContactList allItems={contacts} items={filteredContacts} search={searchTerm} />
+      <ContactList allItems={contacts} items={filteredContacts} search={searchTerm} contactToDelete={deleteContactHandler} />
       <ContactForm onAddContact={addContactHandler}/>
     </>
   );
