@@ -9,7 +9,7 @@ const contactsData = [];
 function App() {
   const [contacts, setContacts] = useState(contactsData);
 
-  const addContactHandler = (contactData)=>{
+  const addContactHandler = (contactData)=>{ // update contact list when contact is added
     setContacts(prevContact=>{
       return [contactData, ...prevContact];
     })
