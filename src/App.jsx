@@ -33,6 +33,7 @@ function App() {
     <>
       <SearchBar onSearchChange={searchChangeHandler} />
       <ContactList allItems={contacts} items={filteredContacts} search={searchTerm} contactToDelete={deleteContactHandler} />
+      <button class="btn">Add Contact</button>
       <ContactForm onAddContact={addContactHandler}/>
     </>
   );
