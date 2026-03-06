@@ -35,6 +35,10 @@ const ContactForm = function(props) {
         };
         console.log(contactData)
         props.onAddContact(contactData);
+        setEnteredName('');
+        setEnteredEmail('');
+        setEnteredPhone('');
+        setEnteredBirthdate('');
     }
     
     return (
