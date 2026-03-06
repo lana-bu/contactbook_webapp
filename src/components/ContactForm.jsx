@@ -25,7 +25,7 @@ const ContactForm = function(props) {
     }
 
     const submitHandler = (event)=>{
-        event.preventDefault();
+        event.preventDefault(); // prevent page refresh
         const contactData = {
             id: Date.now().toString(),
             name: enteredName,
