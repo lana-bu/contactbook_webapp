@@ -8,6 +8,7 @@ const contactsData = [];
 
 function App() {
   const [contacts, setContacts] = useState(contactsData);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const addContactHandler = (contactData)=>{ // update contact list when contact is added
     setContacts(prevContact=>{
@@ -15,10 +16,19 @@ function App() {
     })
   }
 
+  const searchChangeHandler = (value)=>{
+    setSearchTerm(value);
+  }
+
+  const filteredContacts = contacts.filter(contact => {
+    const term = searchTerm.toLowerCase();
+    return contact.name.toLowerCase().includes(term) || contact.email.toLowerCase().includes(term);
+  });
+
   return (
     <>
-      <SearchBar />
-      <ContactList items={contacts} />
+      <SearchBar onSearchChange={searchChangeHandler} />
+      <ContactList items={filteredContacts} />
       <ContactForm onAddContact={addContactHandler}/>
     </>
   );
