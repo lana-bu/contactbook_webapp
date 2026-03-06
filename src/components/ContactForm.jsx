@@ -62,7 +62,7 @@ const ContactForm = function(props) {
                     <input type="date" name="birthdate" id="birthdate" class="form-input" value={enteredBirthdate} onChange={birthdateChangedHandler} />                        
                 </div>
             </fieldset>
-            <button type="submit" class="btn">Add Contact</button>
+            <button type="submit" class="btn">Create New Contact</button>
         </form>
     );
 }
