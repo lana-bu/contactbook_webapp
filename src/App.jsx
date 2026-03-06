@@ -28,7 +28,7 @@ function App() {
   return (
     <>
       <SearchBar onSearchChange={searchChangeHandler} />
-      <ContactList items={filteredContacts} />
+      <ContactList allItems={contacts} items={filteredContacts} search={searchTerm} />
       <ContactForm onAddContact={addContactHandler}/>
     </>
   );
