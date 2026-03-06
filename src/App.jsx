@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
 import './App.css'
 import ContactForm from './components/ContactForm.jsx';
 import ContactList from './components/ContactList.jsx';
@@ -35,13 +33,7 @@ function App() {
     <>
       <SearchBar onSearchChange={searchChangeHandler} />
       <ContactList allItems={contacts} items={filteredContacts} search={searchTerm} contactToDelete={deleteContactHandler} />
-      <Popup trigger = 
-        { <button class="btn">Add Contact</button> }
-        modal nested>
-          {
-            <ContactForm onAddContact={addContactHandler}/>
-          }
-      </Popup>
+      <ContactForm onAddContact={addContactHandler}/>
     </>
   );
 }
