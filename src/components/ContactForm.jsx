@@ -1,6 +1,8 @@
 // controlled inputs for Name/Email/Phone; submits to add
 
 import { useState } from 'react';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 const ContactForm = function(props) {
     const [enteredName, setEnteredName] = useState('');
@@ -24,7 +26,7 @@ const ContactForm = function(props) {
         setEnteredBirthdate(event.target.value);
     }
 
-    const submitHandler = (event)=>{
+    const submitHandler = (event, close)=>{ // close is passed so that submit can close the popup
         event.preventDefault(); // prevent page refresh
         const contactData = {
             id: Date.now().toString(),
@@ -39,31 +41,38 @@ const ContactForm = function(props) {
         setEnteredEmail('');
         setEnteredPhone('');
         setEnteredBirthdate('');
+        close();
     }
     
     return (
-        <form action="" class="form" onSubmit={submitHandler}>
-            <fieldset>
-                <legend>Contact Information</legend>
-                <div class="form-input-group">
-                    <label for="name" class="form-label">Name:</label>
-                    <input type="text" name="name" id="name" required="required" class="form-input" value={enteredName} onChange={nameChangedHandler} />
-                </div>
-                <div class="form-input-group">
-                    <label for="email" class="form-label">Email:</label>
-                    <input type="email" name="email" id="email" required="required" class="form-input" value={enteredEmail} onChange={emailChangedHandler} />                        
-                </div>
-                <div class="form-input-group">
-                    <label for="phone" class="form-label">Phone number:</label>
-                    <input type="tel" name="phone" id="phone" class="form-input" value={enteredPhone} onChange={phoneChangedHandler} />
-                </div>
-                <div class="form-input-group">
-                    <label for="birthdate" class="form-label">Birthdate:</label>
-                    <input type="date" name="birthdate" id="birthdate" class="form-input" value={enteredBirthdate} onChange={birthdateChangedHandler} />                        
-                </div>
-            </fieldset>
-            <button type="submit" class="btn">Create New Contact</button>
-        </form>
+        <Popup trigger = {<button class="btn">Add Contact</button>} modal nested>
+            {
+                close => ( 
+                    <form action="" class="form" onSubmit={(e) => submitHandler(e, close)}>
+                        <fieldset>
+                            <legend>Contact Information</legend>
+                            <div class="form-input-group">
+                                <label for="name" class="form-label">Name:</label>
+                                <input type="text" name="name" id="name" required="required" class="form-input" value={enteredName} onChange={nameChangedHandler} />
+                            </div>
+                            <div class="form-input-group">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" name="email" id="email" required="required" class="form-input" value={enteredEmail} onChange={emailChangedHandler} />                        
+                            </div>
+                            <div class="form-input-group">
+                                <label for="phone" class="form-label">Phone number:</label>
+                                <input type="tel" name="phone" id="phone" class="form-input" value={enteredPhone} onChange={phoneChangedHandler} />
+                            </div>
+                            <div class="form-input-group">
+                                <label for="birthdate" class="form-label">Birthdate:</label>
+                                <input type="date" name="birthdate" id="birthdate" class="form-input" value={enteredBirthdate} onChange={birthdateChangedHandler} />                        
+                            </div>
+                        </fieldset>
+                        <button type="submit" class="btn">Create New Contact</button>
+                    </form>
+                )
+            }
+        </Popup>
     );
 }
 
