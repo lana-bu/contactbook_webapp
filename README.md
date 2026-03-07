@@ -8,6 +8,7 @@ This is my Project #2 assignment for my CIS 435 (Web Technology) course at UM-De
 - Deleting array elements with filter: https://stackoverflow.com/questions/67979861/how-to-delete-an-element-from-array-in-react
 - Using ReactJS Popup: https://www.geeksforgeeks.org/reactjs/how-to-create-popup-box-in-reactjs/
 - Phone number input formatting: https://codesandbox.io/p/sandbox/react-phone-number-auto-format-dashes-hyphen-zdg30?file=%2Fsrc%2Futils%2Findex.ts%3A4%2C3-7%2C62
+- Changing input placeholder text color: https://stackoverflow.com/questions/2610497/change-an-html-inputs-placeholder-color-with-css
 #### Claude Code
 - Missing useState imports
   - Prompt: "I am creating a simple stateless contact book web app. For the component structure, I am following along with the example shown on this website: https://medium.com/@goforindu/how-to-create-dynamic-list-in-react-with-demo-app-eb4f63c299f6. I have kept most of the structure the same, but I have not included a component similar to their NewActivity component and instead have condensed it within my ContactForm component. However, the site will not load. Can you help me figure out what's wrong?"
@@ -26,3 +27,9 @@ This is my Project #2 assignment for my CIS 435 (Web Technology) course at UM-De
 - Closing popup after contact form submit
   - Prompt: "I'm working on the contact form popup. When the submit button is pressed, I want it to perform the submitHandler function and then close the popup. I don't know where to call the close function to achieve this. Can you help me?"
   - Response: "The close function from the reactjs-popup render prop (line 49) is available inside the JSX, but submitHandler is defined outside that scope. By changing onSubmit to an arrow function (e) => submitHandler(e, close), you pass close as a second argument to submitHandler, which then calls close() at the end after adding the contact and clearing the form fields."
+- Phone number patterning
+  - Prompt: "For the contact form component's telephone input, I want the pattern to accept either (xxx) xxx-xxxx or xxx-xxxx as valid telephone patterns. I thought I could do this with the | operator, but it's only accepting the xxx-xxxx format as valid. Can you show me what's wrong?"
+  - Response: "The ( and ) have special meaning in regex — they create capture groups. To match literal parentheses like in (555) 123-4567, you need \( and \). Without the backslashes, the pattern was essentially treating [0-9]{3} as a grouped expression followed by a space, which didn't match the (xxx) format your auto-formatter produces."
+- Center aligning popup trigger button
+  - Prompt: "I'm working on styling my web app. I want the add contact button to be center aligned. I would think to do this by making its parent a flex container and center aligning all items within it, but since it is the trigger for the popup form, I don't know what it's parent would actually be. I thought it could be the imported Popup element, but this didn't seem to work. Can you help me solve this issue?"
+  - Response: "The Popup component generates its own wrapper around the trigger button, which is why styling Popup directly or targeting .popup-btn alone didn't center it — you had no control over that intermediate element. By wrapping the whole in a .popup-btn-container div with display: flex and justify-content: center, the Popup's generated wrapper (and the button inside it) gets centered regardless of what reactjs-popup does internally."
