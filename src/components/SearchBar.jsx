@@ -1,7 +1,7 @@
 // controlled input for filter text
 
 import { useState } from 'react';
-import { BsSearch } from 'react-icons/bs';
+import { IoSearch } from "react-icons/io5";
 
 const SearchBar = (props)=>{
     const [searchEntry, setSearchEntry] = useState('');
@@ -13,7 +13,7 @@ const SearchBar = (props)=>{
 
     return (
         <div class='search'>
-            <BsSearch />
+            <IoSearch />
             <input type="text" class="search-input" placeholder='Search for contacts...' value={searchEntry} onChange={searchChangedHandler} />                        
         </div>
     )
