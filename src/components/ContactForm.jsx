@@ -1,6 +1,7 @@
 // controlled inputs for Name/Email/Phone; submits to add
 
 import { useState } from 'react';
+import { IoClose } from "react-icons/io5";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
@@ -48,28 +49,31 @@ const ContactForm = function(props) {
         <Popup trigger = {<button class="btn">Add Contact</button>} modal nested>
             {
                 close => ( 
-                    <form action="" class="form" onSubmit={(e) => submitHandler(e, close)}>
-                        <fieldset>
-                            <legend>Contact Information</legend>
-                            <div class="form-input-group">
-                                <label for="name" class="form-label">Name:</label>
-                                <input type="text" name="name" id="name" required="required" class="form-input" value={enteredName} onChange={nameChangedHandler} />
-                            </div>
-                            <div class="form-input-group">
-                                <label for="email" class="form-label">Email:</label>
-                                <input type="email" name="email" id="email" required="required" class="form-input" value={enteredEmail} onChange={emailChangedHandler} />                        
-                            </div>
-                            <div class="form-input-group">
-                                <label for="phone" class="form-label">Phone number:</label>
-                                <input type="tel" name="phone" id="phone" class="form-input" value={enteredPhone} onChange={phoneChangedHandler} />
-                            </div>
-                            <div class="form-input-group">
-                                <label for="birthdate" class="form-label">Birthdate:</label>
-                                <input type="date" name="birthdate" id="birthdate" class="form-input" value={enteredBirthdate} onChange={birthdateChangedHandler} />                        
-                            </div>
-                        </fieldset>
-                        <button type="submit" class="btn">Create New Contact</button>
-                    </form>
+                    <div>
+                        <button class='btn close-btn' onClick={close}><IoClose /></button>
+                        <form action="" class="form" onSubmit={(e) => submitHandler(e, close)}>
+                            <fieldset>
+                                <legend>Contact Information</legend>
+                                <div class="form-input-group">
+                                    <label for="name" class="form-label">Name:</label>
+                                    <input type="text" name="name" id="name" required="required" class="form-input" value={enteredName} onChange={nameChangedHandler} />
+                                </div>
+                                <div class="form-input-group">
+                                    <label for="email" class="form-label">Email:</label>
+                                    <input type="email" name="email" id="email" required="required" class="form-input" value={enteredEmail} onChange={emailChangedHandler} />                        
+                                </div>
+                                <div class="form-input-group">
+                                    <label for="phone" class="form-label">Phone number:</label>
+                                    <input type="tel" name="phone" id="phone" class="form-input" value={enteredPhone} onChange={phoneChangedHandler} />
+                                </div>
+                                <div class="form-input-group">
+                                    <label for="birthdate" class="form-label">Birthdate:</label>
+                                    <input type="date" name="birthdate" id="birthdate" class="form-input" value={enteredBirthdate} onChange={birthdateChangedHandler} />                        
+                                </div>
+                            </fieldset>
+                            <button type="submit" class="btn">Create New Contact</button>
+                        </form>
+                    </div>
                 )
             }
         </Popup>
