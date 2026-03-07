@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { IoClose } from "react-icons/io5";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+import { phoneNumberAutoFormat } from '../utils/index'
 
 const ContactForm = function(props) {
     const [enteredName, setEnteredName] = useState('');
@@ -11,23 +12,24 @@ const ContactForm = function(props) {
     const [enteredPhone, setEnteredPhone] = useState('');
     const [enteredBirthdate, setEnteredBirthdate] = useState('');
 
-    const nameChangedHandler = (event)=>{
+    const nameChangedHandler = (event) => {
         setEnteredName(event.target.value);
     }
 
-    const emailChangedHandler = (event)=>{
+    const emailChangedHandler = (event) => {
         setEnteredEmail(event.target.value);
     }
 
-    const phoneChangedHandler = (event)=>{
-        setEnteredPhone(event.target.value);
+    const phoneChangedHandler = (event) => {
+        const targetValue = phoneNumberAutoFormat(event.target.value);
+        setEnteredPhone(targetValue);
     }
 
-    const birthdateChangedHandler = (event)=>{
+    const birthdateChangedHandler = (event) => {
         setEnteredBirthdate(event.target.value);
     }
 
-    const submitHandler = (event, close)=>{ // close is passed so that submit can close the popup
+    const submitHandler = (event, close) => { // close is passed so that submit can close the popup
         event.preventDefault(); // prevent page refresh
         const contactData = {
             id: Date.now().toString(),
@@ -64,7 +66,7 @@ const ContactForm = function(props) {
                                 </div>
                                 <div class="form-input-group">
                                     <label for="phone" class="form-label">Phone number:</label>
-                                    <input type="tel" name="phone" id="phone" class="form-input" value={enteredPhone} onChange={phoneChangedHandler} />
+                                    <input type="tel" name="phone" id="phone" class="form-input" pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}|[0-9]{3}-[0-9]{4}" value={enteredPhone} onChange={phoneChangedHandler} maxLenght={13} />
                                 </div>
                                 <div class="form-input-group">
                                     <label for="birthdate" class="form-label">Birthdate:</label>
