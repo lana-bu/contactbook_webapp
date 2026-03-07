@@ -12,9 +12,9 @@ const SearchBar = (props)=>{
     }
 
     return (
-        <div class='search'>
-            <IoSearch class='search-icon'/>
-            <input type="text" class="search-input" placeholder='Search for contacts...' value={searchEntry} onChange={searchChangedHandler} />                        
+        <div className='search'>
+            <IoSearch className='search-icon'/>
+            <input type="text" className="search-input" placeholder='Search for contacts...' value={searchEntry} onChange={searchChangedHandler} />                        
         </div>
     )
 }

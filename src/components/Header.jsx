@@ -2,9 +2,9 @@ import { BiSolidContact } from "react-icons/bi";
 
 function Header() {
     return (
-        <div class='header'>
-            <BiSolidContact class='header-icon' />
-            <span class='site-title'>MyContacts</span>
+        <div className='header'>
+            <BiSolidContact className='header-icon' />
+            <span className='site-title'>MyContacts</span>
         </div>
     );
 }

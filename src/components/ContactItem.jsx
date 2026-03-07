@@ -10,13 +10,13 @@ const ContactItem = function(props) {
     }
     
     return (
-        <div class="list-item">
+        <div className="list-item">
             <IoMdContact />
             <span>{props.name}</span>
             <span>{props.email}</span>
             <span>{props.phone}</span>
             <span>{props.birthdate}</span>
-            <button class="btn delete-btn" onClick={deleteButtonHandler}><FaTrashAlt /></button>
+            <button className="btn delete-btn" onClick={deleteButtonHandler}><FaTrashAlt /></button>
         </div>
     );
 }

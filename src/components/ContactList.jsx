@@ -19,7 +19,7 @@ const ContactList = (props)=>{
         }
 
     return (
-        <div class='list'>
+        <div className='list'>
             {contactsDisplay}
         </div>
     );

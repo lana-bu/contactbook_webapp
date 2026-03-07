@@ -48,32 +48,32 @@ const ContactForm = function(props) {
     }
     
     return (
-        <Popup trigger = {<button class="btn">Add Contact</button>} modal nested>
+        <Popup className='popup' trigger = {<button className="btn">Add Contact</button>} modal nested>
             {
                 close => ( 
                     <div>
-                        <button class='btn close-btn' onClick={close}><IoClose /></button>
-                        <form action="" class="form" onSubmit={(e) => submitHandler(e, close)}>
+                        <button className='btn close-btn' onClick={close}><IoClose /></button>
+                        <form action="" className="form" onSubmit={(e) => submitHandler(e, close)}>
                             <fieldset>
                                 <legend>Contact Information</legend>
-                                <div class="form-input-group">
-                                    <label for="name" class="form-label">Name:</label>
-                                    <input type="text" name="name" id="name" required="required" class="form-input" value={enteredName} onChange={nameChangedHandler} />
+                                <div className="form-input-group">
+                                    <label for="name" className="form-label">Name:</label>
+                                    <input type="text" name="name" id="name" required="required" className="form-input" value={enteredName} onChange={nameChangedHandler} />
                                 </div>
-                                <div class="form-input-group">
-                                    <label for="email" class="form-label">Email:</label>
-                                    <input type="email" name="email" id="email" required="required" class="form-input" value={enteredEmail} onChange={emailChangedHandler} />                        
+                                <div className="form-input-group">
+                                    <label for="email" className="form-label">Email:</label>
+                                    <input type="email" name="email" id="email" required="required" className="form-input" value={enteredEmail} onChange={emailChangedHandler} />                        
                                 </div>
-                                <div class="form-input-group">
-                                    <label for="phone" class="form-label">Phone number:</label>
-                                    <input type="tel" name="phone" id="phone" class="form-input" pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}|[0-9]{3}-[0-9]{4}" value={enteredPhone} onChange={phoneChangedHandler} maxLenght={13} />
+                                <div className="form-input-group">
+                                    <label for="phone" className="form-label">Phone number:</label>
+                                    <input type="tel" name="phone" id="phone" className="form-input" pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}|[0-9]{3}-[0-9]{4}" value={enteredPhone} onChange={phoneChangedHandler} maxLenght={13} />
                                 </div>
-                                <div class="form-input-group">
-                                    <label for="birthdate" class="form-label">Birthdate:</label>
-                                    <input type="date" name="birthdate" id="birthdate" class="form-input" value={enteredBirthdate} onChange={birthdateChangedHandler} />                        
+                                <div className="form-input-group">
+                                    <label for="birthdate" className="form-label">Birthdate:</label>
+                                    <input type="date" name="birthdate" id="birthdate" className="form-input" value={enteredBirthdate} onChange={birthdateChangedHandler} />                        
                                 </div>
                             </fieldset>
-                            <button type="submit" class="btn">Create New Contact</button>
+                            <button type="submit" className="btn">Create New Contact</button>
                         </form>
                     </div>
                 )
