@@ -1,3 +1,28 @@
+:root {
+  --primary-color: #3f49a4;
+  --primary-color-translucent: #3f49a458;
+  --secondary-color: #665fd1;
+  --danger-color: #f04e5e;
+  --danger-color-hover: #f76170;
+  --text-color: #232161;
+  --reverse-text-color: #d2d2f8;
+  --background-color: #ccccff;
+  --spacing: 0.7em;
+}
+
+.header {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.delete-btn {
+  background-color: var(--danger-color);
+}
+
+.delete-btn:hover {
+  background-color: var(--danger-color-hover);
+}
+
 /* #root {
   max-width: 1280px;
   margin: 0 auto;

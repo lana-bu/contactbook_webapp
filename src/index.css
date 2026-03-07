@@ -1,3 +1,57 @@
+:root {
+  --primary-color: #3f49a4;
+  --primary-color-translucent: #3f49a42f;
+  --secondary-color: #665fd1;
+  --danger-color: #fc6a78;
+  --danger-color-hover: #f95666;
+  --text-color: #232161;
+  --reverse-text-color: #d2d2f8;
+  --background-color: #ccccff;
+  --spacing: 0.7em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Optima, 'Trebuchet MS', Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
+  
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  border-radius: 8px;
+  border: none;
+  padding: var(--spacing);
+  font-size: 1.2em;
+  font-weight: bold;
+  font-family: inherit;
+  background-color: var(--primary-color);
+  color: white;
+  align-self: center;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+input {
+  padding: 0.2em;
+  font-size: 1em;
+  font-weight: bold;
+  font-family: inherit;
+  color: var(--text-color);
+
+  background-color: var(--primary-color-translucent);
+}
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -33,25 +87,6 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 @media (prefers-color-scheme: light) {
