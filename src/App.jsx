@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css'
 import ContactForm from './components/ContactForm.jsx';
 import ContactList from './components/ContactList.jsx';
+import Header from './components/Header.jsx'
 import SearchBar from './components/SearchBar.jsx';
 
 const contactsData = [];
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <>
+      <Header />
       <SearchBar onSearchChange={searchChangeHandler} />
       <ContactList allItems={contacts} items={filteredContacts} search={searchTerm} contactToDelete={deleteContactHandler} />
       <ContactForm onAddContact={addContactHandler}/>
