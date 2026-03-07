@@ -3,8 +3,8 @@ import { BiSolidContact } from "react-icons/bi";
 function Header() {
     return (
         <div class='header'>
-            <BiSolidContact />
-            <h1>MyContacts</h1>
+            <BiSolidContact class='header-icon' />
+            <span class='site-title'>MyContacts</span>
         </div>
     );
 }

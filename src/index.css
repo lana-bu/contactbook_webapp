@@ -19,7 +19,7 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: Optima, 'Trebuchet MS', Arial, Helvetica, sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
