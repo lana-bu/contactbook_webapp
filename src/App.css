@@ -49,6 +49,7 @@
 .search-input {
   margin: 0 0.2em;
   flex-grow: 1;
+  font-size: 1em;
 }
 
 .list {
@@ -74,21 +75,49 @@
 .form-popup-content {
   background-color: var(--background-color) !important;
   width: 90% !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  padding: 0.7em;
+  font-size: 1.1em;
+  font-weight: bold;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn:hover {
+  background-color: var(--secondary-color);
 }
 
 .close-btn {
   background: none;
   color: var(--primary-color);
   padding: 0;
+  margin: 0;
+  font-size: 0.8em;
+  display: flex;
+  margin-left: auto;
+}
+
+.close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .form fieldset {
   border: 2px solid var(--primary-color);
   margin: 0.5em;
+  font-size: 0.7em;
 }
 
 .form legend {
   font-weight: bold;
+}
+
+.form-input-group {
+  display: flex;
+  padding: 0.1em;
 }
 
 .delete-btn {
