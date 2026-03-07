@@ -62,15 +62,33 @@
   text-align: center;
 }
 
-.popup {
-  display: flex;
-  align-items: center;
-  background-color: blue;
-}
-
 .popup-container { /* used to center add contact button */
   display: flex;
   justify-content: center;
+}
+
+.form-popup-overlay {
+  
+}
+
+.form-popup-content {
+  background-color: var(--background-color) !important;
+  width: 90% !important;
+}
+
+.close-btn {
+  background: none;
+  color: var(--primary-color);
+  padding: 0;
+}
+
+.form fieldset {
+  border: 2px solid var(--primary-color);
+  margin: 0.5em;
+}
+
+.form legend {
+  font-weight: bold;
 }
 
 .delete-btn {

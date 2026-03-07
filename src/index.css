@@ -53,6 +53,10 @@ input {
   background-color: var(--primary-color-translucent);
 }
 
+input:focus {
+  outline: 2px solid var(--secondary-color);
+}
+
 ::placeholder { /* Most modern browsers support this now. */
   color: var(--text-color-translucent);
 }
