@@ -35,7 +35,9 @@ function App() {
       <Header />
       <SearchBar onSearchChange={searchChangeHandler} />
       <ContactList allItems={contacts} items={filteredContacts} search={searchTerm} contactToDelete={deleteContactHandler} />
-      <ContactForm onAddContact={addContactHandler}/>
+      <div class="popup-container">
+        <ContactForm onAddContact={addContactHandler}/>
+      </div>
     </>
   );
 }

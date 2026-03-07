@@ -62,6 +62,17 @@
   text-align: center;
 }
 
+.popup {
+  display: flex;
+  align-items: center;
+  background-color: blue;
+}
+
+.popup-container { /* used to center add contact button */
+  display: flex;
+  justify-content: center;
+}
+
 .delete-btn {
   background-color: var(--danger-color);
 }
