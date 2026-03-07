@@ -6,6 +6,7 @@ This is my Project #2 assignment for my CIS 435 (Web Technology) course at UM-De
 - Structure for contact components (form, item, list): https://medium.com/@goforindu/how-to-create-dynamic-list-in-react-with-demo-app-eb4f63c299f6
 - If-else for contact list content: https://react.dev/learn
 - Deleting array elements with filter: https://stackoverflow.com/questions/67979861/how-to-delete-an-element-from-array-in-react
+- Using ReactJS Popup: https://www.geeksforgeeks.org/reactjs/how-to-create-popup-box-in-reactjs/
 #### Claude Code
 - Missing useState imports
   - Prompt: "I am creating a simple stateless contact book web app. For the component structure, I am following along with the example shown on this website: https://medium.com/@goforindu/how-to-create-dynamic-list-in-react-with-demo-app-eb4f63c299f6. I have kept most of the structure the same, but I have not included a component similar to their NewActivity component and instead have condensed it within my ContactForm component. However, the site will not load. Can you help me figure out what's wrong?"
@@ -21,3 +22,6 @@ This is my Project #2 assignment for my CIS 435 (Web Technology) course at UM-De
   - Response 1: "The problem was that const declarations are not hoisted like function declarations. When a contact gets added, the else branch runs and tries to reference transferContactToDelete, but it hasn't been defined yet at that point in execution — causing a ReferenceError. Moving the definition above the if/else block resolves this."
   - Prompt 2: "That fixed the issue with the server not loading, but now the delete button won't work properly, and I can't tell why."
   - Response 2: "The problem was that key is a special React prop — it's used internally by React for reconciliation and is not accessible via props.key. So props.id was undefined, and the filter in deleteContactHandler couldn't match any contact. Adding an explicit id={item.id} prop makes it available to ContactItem."
+- Closing popup after contact form submit
+  - Prompt: "I'm working on the contact form popup. When the submit button is pressed, I want it to perform the submitHandler function and then close the popup. I don't know where to call the close function to achieve this. Can you help me?"
+  - Response: "The close function from the reactjs-popup render prop (line 49) is available inside the JSX, but submitHandler is defined outside that scope. By changing onSubmit to an arrow function (e) => submitHandler(e, close), you pass close as a second argument to submitHandler, which then calls close() at the end after adding the contact and clearing the form fields."
