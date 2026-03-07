@@ -1,12 +1,13 @@
 :root {
   --primary-color: #3f49a4;
-  --primary-color-translucent: #3f49a458;
+  --primary-color-translucent: #3f49a459;
   --secondary-color: #665fd1;
   --danger-color: #f04e5e;
   --danger-color-hover: #f76170;
   --text-color: #232161;
+  --text-color-translucent: #2321618c;
   --background-color: #cfcfff;
-  --spacing: 0.7em;
+  --spacing: 1em;
 }
 
 .header {
@@ -28,6 +29,37 @@
 .header-icon {
   vertical-align: middle;
   margin: 0 0.2em;
+}
+
+.search {
+  margin: var(--spacing) 0.9em;
+  font-size: 0.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-icon {
+  margin: 0 0.2em;
+  vertical-align: middle;
+  color: var(--primary-color);
+  font-size: 1.3em;
+}
+
+.search-input {
+  margin: 0 0.2em;
+  flex-grow: 1;
+}
+
+.list {
+  margin: var(--spacing) 0.9em;
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  align-self: center;
+  text-align: center;
 }
 
 .delete-btn {

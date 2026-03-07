@@ -1,13 +1,13 @@
 :root {
   --primary-color: #3f49a4;
-  --primary-color-translucent: #3f49a42f;
+  --primary-color-translucent: #3f49a459;
   --secondary-color: #665fd1;
-  --danger-color: #fc6a78;
-  --danger-color-hover: #f95666;
+  --danger-color: #f04e5e;
+  --danger-color-hover: #f76170;
   --text-color: #232161;
-  --reverse-text-color: #d2d2f8;
-  --background-color: #ccccff;
-  --spacing: 0.7em;
+  --text-color-translucent: #2321618c;
+  --background-color: #cfcfff;
+  --spacing: 1em;
 }
 
 * {
@@ -43,13 +43,18 @@ button:hover {
 }
 
 input {
-  padding: 0.2em;
+  padding: 0.2em 0.4em;
   font-size: 1em;
   font-weight: bold;
   font-family: inherit;
+  border-radius: 6px;
+  border: 2px solid var(--primary-color);
   color: var(--text-color);
-
   background-color: var(--primary-color-translucent);
+}
+
+::placeholder { /* Most modern browsers support this now. */
+  color: var(--text-color-translucent);
 }
 
 /* :root {
