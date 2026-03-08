@@ -10,6 +10,7 @@ This is my Project #2 assignment for my CIS 435 (Web Technology) course at UM-De
 - Phone number input formatting: https://codesandbox.io/p/sandbox/react-phone-number-auto-format-dashes-hyphen-zdg30?file=%2Fsrc%2Futils%2Findex.ts%3A4%2C3-7%2C62
 - Changing input placeholder text color: https://stackoverflow.com/questions/2610497/change-an-html-inputs-placeholder-color-with-css
 - Customizing ReactJS Popup with CSS: https://react-popup.elazizi.com/component-api/
+- Customizing invalid messages: https://coryrylan.com/blog/styling-html-form-validation-with-css
 #### Claude Code
 - Missing useState imports
   - Prompt: "I am creating a simple stateless contact book web app. For the component structure, I am following along with the example shown on this website: https://medium.com/@goforindu/how-to-create-dynamic-list-in-react-with-demo-app-eb4f63c299f6. I have kept most of the structure the same, but I have not included a component similar to their NewActivity component and instead have condensed it within my ContactForm component. However, the site will not load. Can you help me figure out what's wrong?"
@@ -37,3 +38,6 @@ This is my Project #2 assignment for my CIS 435 (Web Technology) course at UM-De
 - Popup customization with classes
   - Prompt: "I should be able to modify the popup's content using the className I gave it and appending -content to it in my CSS file for App, according to this website: https://react-popup.elazizi.com/component-api/. However, changes I make in it seem to not affect the popup at all. Do you know what I'm doing wrong?"
   - Response: "The problem was that reactjs-popup uses popup-content as its own default class name internally (you can see it applied when you import reactjs-popup/dist/index.css). So when you set className='popup', the generated popup-content class collided with the library's built-in popup-content class and its associated default styles. By changing to className='contact-popup', the generated classes become contact-popup-content, contact-popup-overlay, and contact-popup-arrow — which are unique and won't conflict with the library's defaults. Your CSS rules should now apply properly."
+- Disabling browser tools' default invalid message
+  - Prompt: "I want to display my own error messages for the popup form inputs. I have this set up already, but I don't know how to disable the default error messages that HTML provides. Can you help me with this?"
+  - Response: "To summarize: noValidate on the suppresses the browser's default validation tooltips/popups. checkValidity() in the submit handler manually checks the form's validity and prevents submission if any inputs are invalid. Your custom error messages (the elements shown via :user-invalid) will still display since the browser still tracks each input's validity state — noValidate only affects the tooltip UI, not the underlying validation API."
