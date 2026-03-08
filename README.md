@@ -11,6 +11,7 @@ This is my Project #2 assignment for my CIS 435 (Web Technology) course at UM-De
 - Changing input placeholder text color: https://stackoverflow.com/questions/2610497/change-an-html-inputs-placeholder-color-with-css
 - Customizing ReactJS Popup with CSS: https://react-popup.elazizi.com/component-api/
 - Customizing invalid messages: https://coryrylan.com/blog/styling-html-form-validation-with-css
+- Reformatting the date: https://www.delftstack.com/howto/react/react-date-format/
 #### Claude Code
 - Missing useState imports
   - Prompt: "I am creating a simple stateless contact book web app. For the component structure, I am following along with the example shown on this website: https://medium.com/@goforindu/how-to-create-dynamic-list-in-react-with-demo-app-eb4f63c299f6. I have kept most of the structure the same, but I have not included a component similar to their NewActivity component and instead have condensed it within my ContactForm component. However, the site will not load. Can you help me figure out what's wrong?"
