@@ -63,22 +63,6 @@
   text-align: center;
 }
 
-.popup-container { /* used to center add contact button */
-  display: flex;
-  justify-content: center;
-}
-
-.form-popup-overlay {
-  
-}
-
-.form-popup-content {
-  background-color: var(--background-color) !important;
-  width: 90% !important;
-  display: flex;
-  flex-direction: column;
-}
-
 .btn {
   padding: 0.7em;
   font-size: 1.1em;
@@ -89,6 +73,16 @@
 
 .btn:hover {
   background-color: var(--secondary-color);
+}
+
+.popup-container { /* used to center add contact button */
+  display: flex;
+  justify-content: center;
+}
+
+.form-popup-content {
+  background-color: var(--background-color) !important;
+  width: 90% !important;
 }
 
 .close-btn {
@@ -105,19 +99,71 @@
   background-color: rgba(255, 255, 255, 0.3);
 }
 
+.form {
+  margin: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .form fieldset {
   border: 2px solid var(--primary-color);
-  margin: 0.5em;
+  margin: 0.6em 0.5em;
   font-size: 0.7em;
+  padding: 0.8em;
 }
 
 .form legend {
   font-weight: bold;
+  font-size: 1.1em;
 }
 
 .form-input-group {
   display: flex;
-  padding: 0.1em;
+  padding: 0.4em 0;
+}
+
+.form-label {
+  padding: 0 0.3em 0 0;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
+  flex-grow: 1;
+  font-size: 0.75em;
+  margin: 0 0 0.25em;
+}
+
+.info-msg {
+  font-size: 0.7em;
+  color: var(--secondary-color);
+}
+
+.invalid-msg {
+  color: var(--danger-color);
+}
+
+[aria-live='polite'] {
+  display: none;
+}
+
+.input-box:has(:user-invalid) {
+  .form-input {
+    border-color: var(--danger-color);
+  }
+
+  [aria-live='polite'] {
+    display: block;
+  }
+}
+
+.submit-btn{
+  font-size: 0.8em;
+  margin: 0.8em 0 0.6em;
 }
 
 .delete-btn {

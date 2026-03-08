@@ -31,6 +31,7 @@ const ContactForm = function(props) {
 
     const submitHandler = (event, close) => { // close is passed so that submit can close the popup
         event.preventDefault(); // prevent page refresh
+        if (!event.target.checkValidity()) return; // prevent submit if inputs are invalid
         const contactData = {
             id: Date.now().toString(),
             name: enteredName,
@@ -53,27 +54,37 @@ const ContactForm = function(props) {
                 close => ( 
                     <div>
                         <button className='btn close-btn' onClick={close}><IoClose /></button>
-                        <form action="" className="form" onSubmit={(e) => submitHandler(e, close)}>
+                        <form action="" className="form" noValidate onSubmit={(e) => submitHandler(e, close)}>
                             <fieldset>
                                 <legend>Contact Information</legend>
                                 <div className="form-input-group">
-                                    <label for="name" className="form-label">Name:</label>
-                                    <input type="text" name="name" id="name" required="required" className="form-input" value={enteredName} onChange={nameChangedHandler} />
+                                    <label for="name" className="form-label">Name*:</label>
+                                    <div className='input-box'>
+                                        <input type="text" name="name" id="name" required="required" className="form-input" placeholder="Enter name..." value={enteredName} onChange={nameChangedHandler} />
+                                        <span aria-live='polite' className='info-msg invalid-msg'>Please provide a name.</span>
+                                    </div>
                                 </div>
                                 <div className="form-input-group">
-                                    <label for="email" className="form-label">Email:</label>
-                                    <input type="email" name="email" id="email" required="required" className="form-input" value={enteredEmail} onChange={emailChangedHandler} />                        
+                                    <label for="email" className="form-label">Email*:</label>
+                                    <div className='input-box'>
+                                        <input type="email" name="email" id="email" required="required" className="form-input" placeholder="Enter email..." value={enteredEmail} onChange={emailChangedHandler} />        
+                                        <span aria-live='polite' className='info-msg invalid-msg'>Please provide a valid email address.</span>
+                                    </div>
                                 </div>
                                 <div className="form-input-group">
-                                    <label for="phone" className="form-label">Phone number:</label>
-                                    <input type="tel" name="phone" id="phone" className="form-input" pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}|[0-9]{3}-[0-9]{4}" value={enteredPhone} onChange={phoneChangedHandler} maxLenght={13} />
+                                    <label for="phone" className="form-label">Phone:</label>
+                                    <div className='input-box'>
+                                        <input type="tel" name="phone" id="phone" className="form-input" placeholder="Enter phone number..." pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}|[0-9]{3}-[0-9]{4}" value={enteredPhone} onChange={phoneChangedHandler} maxLength={14} />
+                                        <span aria-live='polite' className='info-msg invalid-msg'>Please provide a valid phone number.</span>
+                                    </div>
                                 </div>
                                 <div className="form-input-group">
                                     <label for="birthdate" className="form-label">Birthdate:</label>
                                     <input type="date" name="birthdate" id="birthdate" className="form-input" value={enteredBirthdate} onChange={birthdateChangedHandler} />                        
                                 </div>
+                                <span className="info-msg">*Required field</span>
                             </fieldset>
-                            <button type="submit" className="btn">Create New Contact</button>
+                            <button type="submit" className="btn submit-btn">Create New Contact</button>
                         </form>
                     </div>
                 )
