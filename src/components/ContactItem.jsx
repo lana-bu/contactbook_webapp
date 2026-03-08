@@ -11,11 +11,15 @@ const ContactItem = function(props) {
     
     return (
         <div className="list-item">
-            <IoMdContact />
-            <span>{props.name}</span>
-            <span>{props.email}</span>
-            <span>{props.phone}</span>
-            <span>{props.birthdate}</span>
+            <div className='contact-title'>
+                <IoMdContact className='contact-icon' />
+                <span className='contact-name'>{props.name}</span>
+            </div>
+            <div className='contact-info'>
+                <span className='contact-element contact-email'>{props.email}</span>
+                <span className='contact-element contact-phone'>{props.phone}</span>
+                <span className='contact-element contact-birthdate'>{props.birthdate}</span>
+            </div>
             <button className="btn delete-btn" onClick={deleteButtonHandler}><FaTrashAlt /></button>
         </div>
     );

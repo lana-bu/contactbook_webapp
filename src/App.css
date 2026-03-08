@@ -2,6 +2,7 @@
   --primary-color: #3f49a4;
   --primary-color-translucent: #3f49a459;
   --secondary-color: #665fd1;
+  --secondary-color-translucent: #675fd153;
   --danger-color: #f04e5e;
   --danger-color-hover: #f76170;
   --text-color: #232161;
@@ -56,11 +57,60 @@
   margin: var(--spacing) 0.9em;
   font-size: 1.1em;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   vertical-align: middle;
   align-self: center;
   text-align: center;
+}
+
+.list-item {
+  display: grid;
+  grid-template-areas:
+    "title"
+    "info"
+    "delete";
+  justify-items: center;
+  background-color: white;
+  padding: var(--spacing);
+  margin: 0.5em 0;
+  border: 2px solid var(--secondary-color);
+  border-radius: 20px;
+  width: 90%;
+  font-size: 0.6em;
+}
+
+.contact-title {
+  grid-area: title;
+  display: flex;
+  justify-content: center;
+  font-size: 1.2em;
+  margin: 0.2em 0 0.4em;
+  overflow: auto;
+}
+
+.contact-icon {
+  margin: 0 0.3em;
+}
+
+.contact-name {
+  font-weight: bold;
+}
+
+.contact-info {
+  grid-area: info;
+  font-size: 0.9em;
+  margin: 0.3em;
+  padding: 0.7em;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--secondary-color-translucent);
+  border-radius: 10px;
+}
+
+.contact-element {
+  margin: 0.1em;
 }
 
 .btn {
@@ -167,7 +217,9 @@
 }
 
 .delete-btn {
+  grid-area: delete;
   background-color: var(--danger-color);
+  width: 20%;
 }
 
 .delete-btn:hover {
