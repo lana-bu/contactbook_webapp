@@ -100,9 +100,9 @@
 
 .contact-info {
   grid-area: info;
-  font-size: 0.9em;
-  margin: 0.3em;
-  padding: 0.7em;
+  font-size: 0.8em;
+  margin: 0.1em;
+  padding: 0.8em;
   display: flex;
   flex-direction: column;
   background-color: var(--secondary-color-translucent);
@@ -110,7 +110,7 @@
 }
 
 .contact-element {
-  margin: 0.1em;
+  margin: 0.3em 0;
 }
 
 .btn {
@@ -182,6 +182,7 @@
 }
 
 .input-box {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
@@ -223,11 +224,67 @@
 .delete-btn {
   grid-area: delete;
   background-color: var(--danger-color);
-  width: 20%;
+  width: 50px;
+  height: 50px;
+  margin: 0.7em 0 0;
 }
 
 .delete-btn:hover {
   background-color: var(--danger-color-hover);
+}
+
+/* mobile portrait layout (479px or less */
+@media only screen and (max-width: 479px) {
+ 
+}
+
+
+/* mobile landscape layout (480px to 767px) */
+@media only screen and (min-width: 480px) {
+  .list-item {
+    width: 60%;
+  }
+
+  .contact-info {
+    font-size: 1em;
+  }
+
+  .form-popup-content {
+    width: 60% !important;
+  }
+
+  .form {
+    margin: 0.1em;
+  }
+
+  .form fieldset {
+    font-size: 0.65em;
+  }
+
+  .form legend {
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+
+  .form-input-group {
+    display: flex;
+    padding: 0.2em 0;
+  }
+
+  .submit-btn{
+    font-size: 0.7em;
+    margin: 0.1em 0;
+  }
+}
+
+/* tablet layout (768px to 1023px) */
+@media only screen and (min-width: 768px) {
+ 
+}
+
+/* desktop layout (1024px or more) */
+@media only screen and (min-width: 1024px) {
+
 }
 
 /* #root {
