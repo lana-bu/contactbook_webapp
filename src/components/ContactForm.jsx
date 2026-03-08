@@ -29,6 +29,14 @@ const ContactForm = function(props) {
         setEnteredBirthdate(event.target.value);
     }
 
+    const closePopup = (close) => {
+        setEnteredName('');
+        setEnteredEmail('');
+        setEnteredPhone('');
+        setEnteredBirthdate('');
+        close();
+    }
+
     const submitHandler = (event, close) => { // close is passed so that submit can close the popup
         event.preventDefault(); // prevent page refresh
         if (!event.target.checkValidity()) return; // prevent submit if inputs are invalid
@@ -41,11 +49,7 @@ const ContactForm = function(props) {
         };
         console.log(contactData)
         props.onAddContact(contactData);
-        setEnteredName('');
-        setEnteredEmail('');
-        setEnteredPhone('');
-        setEnteredBirthdate('');
-        close();
+        closePopup(close);
     }
     
     return (
@@ -53,7 +57,7 @@ const ContactForm = function(props) {
             {
                 close => ( 
                     <div>
-                        <button className='btn close-btn' onClick={close}><IoClose /></button>
+                        <button className='btn close-btn' onClick={() => closePopup(close)}><IoClose /></button>
                         <form action="" className="form" noValidate onSubmit={(e) => submitHandler(e, close)}>
                             <fieldset>
                                 <legend>Contact Information</legend>
