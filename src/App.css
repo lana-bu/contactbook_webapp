@@ -125,6 +125,10 @@
   background-color: var(--secondary-color);
 }
 
+.popup-trigger-btn {
+  margin: var(--spacing) 0 2em;
+}
+
 .popup-container { /* used to center add contact button */
   display: flex;
   justify-content: center;

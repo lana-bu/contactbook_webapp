@@ -49,7 +49,7 @@ const ContactForm = function(props) {
     }
     
     return (
-        <Popup className='form-popup' trigger = {<button className="btn">Add Contact</button>} modal nested>
+        <Popup className='form-popup' trigger = {<button className="btn popup-trigger-btn">Add Contact</button>} modal nested>
             {
                 close => ( 
                     <div>
