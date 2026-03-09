@@ -1,5 +1,5 @@
 # contactbook_webapp
-This is my Project #2 assignment for my CIS 435 (Web Technology) course at UM-Dearborn. This web app will be a stateless contact book. I am designing it to become familiar with the React library.
+This is my Project #2 assignment for my CIS 435 (Web Technology) course at UM-Dearborn. This web app is a stateless contact book. I am designed it to become familiar with the React library.
 ## Sources
 ### Code Help
 #### Online Sources
